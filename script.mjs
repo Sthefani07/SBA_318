@@ -1,9 +1,9 @@
 import express from 'express';
 import productRouter from './routes/productRouter.mjs';
 import bodyParser from 'body-parser';
-
-
 import product from "./routes/productRouter.mjs";
+//Data
+import products from './data/dataProducts.mjs';
 
 // Instance os express
 const app = express();
@@ -22,6 +22,11 @@ app.use(express.static('./styles'));
 
 // Routes --- 2. second step
 app.use('/products', productRouter);
+
+// Catch all route
+app.get('*', (req, res)=> {
+    res.status(404).send("404 page not found!")
+});
 
 // Middleware for error handling
 // app.use((req, res)=> {
