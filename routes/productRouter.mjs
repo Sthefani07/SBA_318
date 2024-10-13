@@ -10,25 +10,32 @@ router.get('/', (req, res)=> {
 });
 
 
-//parameters GET - POST -  PATCH - DELETE
+//parameters GET ---------------------------------------------------------
 //@route GET 1 product --------   http://localhost:3000/products/3
 router.get('/:id',(req, res)=>{
     const product = products.find((p) => p.id == req.params.id);
     if (product) res.json(product);
 });
 
+
+// POST -------------------------------------------------------------------
+
  router.post('/:id',(req, res)=>{
     if(req.body.name && req.body.quantity && req.body.note){
-        const options = {
-        id: product.id,
-        name: product.name,
-        quantity: product.quantity,
-        note: product.note,
+        if(products.find((p) => p.name == req.body.name)) {
+            res.json({ error: 'Item already exist in the list'});
+            return;
+        }
+        let productOptions = {   //format to create a new data base 
+        id: products[product.length -1].id + 1,
+        name: req.body.name,
+        quantity: req.body.quantity,
+        note: req.body.note,
     }; 
-  products.push(product);
-   } else {
-    res.send(`Incorrect info ${req.params.productid}`);
-   }
+        // adding - push a new product to data base       http://localhost:3000/products/:id
+    products.push(productOptions);
+    res.json(products[products.length - 1]);
+   } else res.send(`Incorrect info`);  
  });
 
 
@@ -37,4 +44,6 @@ router.get('/:id',(req, res)=>{
 
 
 
-export default router;
+ export default router;
+
+//
