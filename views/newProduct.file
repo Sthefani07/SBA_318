@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>#Grocery#</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+  <nav>
+    <a href='/products'>Add a new product</a>
+    <a href='/products'>The whole list!</a>
+    </nav>
+    <div id="app">
+
+    <h1>Add a new product today</h1>
+
+      <form action="/products" method="post" class= "product-form"><br>
+      <input type='text' name='name' placeholder='Product name' required/><br>
+      <input type='number' name='quantity' placeholder='Quantity' required /><br>
+      <textarea name='note' placeholder='Notes'></textarea><br>
+      <button type='submit'>Submit</button>
+      </form>
+
+    </div>
+  </body>
+</html>

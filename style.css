@@ -1,0 +1,58 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background-color: #007bff;
+    padding: 0;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px,
+}
+
+nav a:hover{
+    text-decoration: underline;
+}
+
+#app{
+    width: 50%;
+    margin: 50pc auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1{
+    color:#007bff;
+    text-align: center;
+}
+
+.product-form input, .product-form textarea{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.product-form button{
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.product-form button:hover{
+    background-color: #218838;
+}

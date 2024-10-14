@@ -12,7 +12,7 @@ router.get('/', (req, res)=> {
 
 
 //parameters GET ---------------------------------------------------------
-//@route GET 1 product --------   http://localhost:3000/products
+//@route GET 1 product --------   
 router.get('/:id',(req, res)=>{
     const product = products.find((p) => p.id == req.params.id);
     if (product) res.json(product);
@@ -35,14 +35,14 @@ router.get('/:id',(req, res)=>{
     }; 
 
     
-        // adding - push a new product to data base       http://localhost:3000/products/list > check again
+        // adding - push a new product to data base       http://localhost:3000/products 
         products.push(newProduct);
         res.render('show', newProduct);
     res.json(products[products.length - 1]);
    } else res.send(`Incorrect info`);  
  });
 
-router.get('/list', (req, res) => {
+router.get('/new', (req, res) => {
     res.render('newProduct');           //new product form
 });
 
